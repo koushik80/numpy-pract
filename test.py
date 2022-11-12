@@ -1,6 +1,7 @@
 import numpy as np
 
 
+
 # single array
 #myList = [1, 2, 3, 4, 5]
 #n = np.array(myList)
@@ -49,3 +50,20 @@ import numpy as np
 
 #o = np.linspace(0,7,10)
 #print(o)
+
+#x = np.random.rand(3,2)    #rand return only positive numbers
+#print(x)
+
+#x = np.random.randn(3,2)    # randn return both positive & negative numbers
+#print(x)
+
+
+#x = np.random.randint(4,15,10)    # randint return random integers from low(inclusive) to high(exclusive)
+#print(x)
+
+#mm=np.arange(64)
+#mm
+#mm.resize(8,8)
+#mm[2,3]
+#mm
+#print(mm[4, 2:5])
