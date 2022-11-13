@@ -46,3 +46,7 @@ import numpy as np
 
 
 #Problem
+
+x = np.arange(2,37).reshape(7,5)
+#print(x)
+print(x[3:2])
