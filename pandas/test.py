@@ -82,7 +82,23 @@ import numpy as np
 # www.kaggle.com/nisargpatel/automobiles/data
 # https://www.stats.govt.nz/large-datasets/csv-files-for-download/
 
-data = pd.read_csv('annual-enterprise-survey.csv')
-print(data)
-print(data.head(20))
-print(data.tail(20))
+#data = pd.read_csv('annual-enterprise-survey.csv')
+# print(data)
+# print(data.head(20))
+# print(data.tail(20))
+
+# -----------------Adding A Column To Pandas DataFrame-----------------
+
+# x = pd.DataFrame(np.random.randn(
+# 10, 5), index='row1 row2 row3 row4 row5 row6 row7 row8 row9 row10'. split(),
+# columns='column1 column2 column3 column4 column5'.split())
+#x['column6'] = x['column1']*5
+# print(x)
+
+
+# ------------Drop Columns And Rows In Pandas DataFrame-------------
+
+x = pd.DataFrame(np.random.randn(
+    10, 5), index='row1 row2 row3 row4 row5 row6 row7 row8 row9 row10'. split(),
+    columns='column1 column2 column3 column4 column5'.split())
+print(x.drop('column3', axis=1))  # use axis = 1 to refer to the column
