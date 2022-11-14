@@ -56,7 +56,23 @@ import numpy as np
 
 # -------------DataFrame-------------
 
+# x = pd.DataFrame(np.random.randn(
+# 10, 5), index='row1 row2 row3 row4 row5 row6 row7 row8 row9 row10'. split(),
+# columns='column1 column2 column3 column4 column5'.split())
+# print(x)
+#y = type(x['column1'])
+#z = type(x)
+# print(y)
+# print(z)
+
+
+# -----------Selection And Indexing On Pandas-----------
+
 x = pd.DataFrame(np.random.randn(
     10, 5), index='row1 row2 row3 row4 row5 row6 row7 row8 row9 row10'. split(),
     columns='column1 column2 column3 column4 column5'.split())
-print(x)
+print(x['column3'])
+print(x[['column3', 'column4', 'column5']])  # selecting multiple columns
+print(x.loc[['row4', 'row3', 'row5']])  # selecting multiple rows
+print()
+print(x.iloc[6])
