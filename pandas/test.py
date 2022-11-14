@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 # data = {
 # "calories": [420, 380, 390],
@@ -10,8 +11,6 @@ import pandas as pd
 
 # print(df)
 
-import pandas as pd
-import numpy as np
 
 # -----------------Serries---------------
 #animals = ['Cat', 'Dog', 'Bird', 'Rabit', 'Duck', 'Cow', 'Tiger', 'Lion']
@@ -101,4 +100,10 @@ import numpy as np
 x = pd.DataFrame(np.random.randn(
     10, 5), index='row1 row2 row3 row4 row5 row6 row7 row8 row9 row10'. split(),
     columns='column1 column2 column3 column4 column5'.split())
-print(x.drop('column3', axis=1))  # use axis = 1 to refer to the column
+# use axis = 1 to refer to the column
+# use inplace=True to make the changes affect
+#print(x.drop('column2', axis=1, inplace=True))
+# use axis = 0 to refer to the row
+print(x.drop('row3', axis=0, inplace=True))
+print(x.iloc[1])
+print(x.loc['row7', 'column2'])
