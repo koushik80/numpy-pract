@@ -11,6 +11,7 @@ import pandas as pd
 # print(df)
 
 import pandas as pd
+import numpy as np
 
 # -----------------Serries---------------
 #animals = ['Cat', 'Dog', 'Bird', 'Rabit', 'Duck', 'Cow', 'Tiger', 'Lion']
@@ -43,12 +44,19 @@ import pandas as pd
 
 # --------loc & iloc--------
 
-sports = {'Football': 'Spain',
-          'NBA': 'USA',
-          'Cricket': 'India',
-          'Athelets': 'Jamaica'}
+# sports = {'Football': 'Spain',
+# 'NBA': 'USA',
+# 'Cricket': 'India',
+# 'Athelets': 'Jamaica'}
 
-sports_series = pd.Series(sports)
-print(sports_series)
-print(sports_series.loc['Cricket'])
-print(sports_series.iloc[3])
+#sports_series = pd.Series(sports)
+# print(sports_series)
+# print(sports_series.loc['Cricket'])
+# print(sports_series.iloc[3])
+
+# -------------DataFrame-------------
+
+x = pd.DataFrame(np.random.randn(
+    10, 5), index='row1 row2 row3 row4 row5 row6 row7 row8 row9 row10'. split(),
+    columns='column1 column2 column3 column4 column5'.split())
+print(x)
