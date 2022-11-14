@@ -68,11 +68,21 @@ import numpy as np
 
 # -----------Selection And Indexing On Pandas-----------
 
-x = pd.DataFrame(np.random.randn(
-    10, 5), index='row1 row2 row3 row4 row5 row6 row7 row8 row9 row10'. split(),
-    columns='column1 column2 column3 column4 column5'.split())
-print(x['column3'])
-print(x[['column3', 'column4', 'column5']])  # selecting multiple columns
-print(x.loc[['row4', 'row3', 'row5']])  # selecting multiple rows
-print()
-print(x.iloc[6])
+# x = pd.DataFrame(np.random.randn(
+# 10, 5), index='row1 row2 row3 row4 row5 row6 row7 row8 row9 row10'. split(),
+# columns='column1 column2 column3 column4 column5'.split())
+# print(x['column3'])
+# print(x[['column3', 'column4', 'column5']])  # selecting multiple columns
+# print(x.loc[['row4', 'row3', 'row5']])  # selecting multiple rows
+# print()
+# print(x.iloc[6])
+
+
+# ------------Reading A Dataset Into Pandas DataFrame------------
+# www.kaggle.com/nisargpatel/automobiles/data
+# https://www.stats.govt.nz/large-datasets/csv-files-for-download/
+
+data = pd.read_csv('annual-enterprise-survey.csv')
+print(data)
+print(data.head(20))
+print(data.tail(20))
