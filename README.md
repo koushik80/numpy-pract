@@ -1,6 +1,6 @@
 
 #### This is part of my Data Analysis studies
 
-<h1 align="center">NumPy Practice</h1>
+<h1 align="center">NumPy & Pandas Practice</h1>
 
 
