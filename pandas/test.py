@@ -97,13 +97,41 @@ import numpy as np
 
 # ------------Drop Columns And Rows In Pandas DataFrame-------------
 
-x = pd.DataFrame(np.random.randn(
-    10, 5), index='row1 row2 row3 row4 row5 row6 row7 row8 row9 row10'. split(),
-    columns='column1 column2 column3 column4 column5'.split())
+# x = pd.DataFrame(np.random.randn(
+# 10, 5), index='row1 row2 row3 row4 row5 row6 row7 row8 row9 row10'. split(),
+# columns='column1 column2 column3 column4 column5'.split())
 # use axis = 1 to refer to the column
 # use inplace=True to make the changes affect
 #print(x.drop('column2', axis=1, inplace=True))
 # use axis = 0 to refer to the row
-print(x.drop('row3', axis=0, inplace=True))
-print(x.iloc[1])
-print(x.loc['row7', 'column2'])
+#print(x.drop('row3', axis=0, inplace=True))
+# print(x.iloc[1])
+#print(x.loc['row7', 'column2'])
+
+
+# ------- Reset Index in Pandas DataFrame-------
+
+x = pd.DataFrame(np.random.randn(
+    10, 5), index='row1 row2 row3 row4 row5 row6 row7 row8 row9 row10'. split(),
+    columns='column1 column2 column3 column4 column5'.split())
+print(x.index)
+y = x = pd.DataFrame(np.random.randn(
+    10, 5), index='row1 row2 row3 row4 row5 row6 row7 row8 row9 row10'. split(),
+    columns='column1 column2 column3 column4 column5'.split())
+
+y['spin'] = ['sp1', 'sp2', 'sp3', 'sp4', 'sp5', 'sp6', 'sp7', 'sp8', 'sp9', 'sp10']
+print(y)
+
+z = y.set_index('spin', inplace=True)
+print(z)
+
+
+# -----------rename column name------------
+r = x.rename(columns={'column1': 'first',
+                      'column2': 'second',
+                      'column3': 'third',
+                      'column4': 'fourth',
+                      'column5': 'fifth',
+                      'column6': 'sixth'}, inplace=True)
+
+print(r)
