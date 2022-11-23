@@ -111,27 +111,63 @@ import numpy as np
 
 # ------- Reset Index in Pandas DataFrame-------
 
-x = pd.DataFrame(np.random.randn(
-    10, 5), index='row1 row2 row3 row4 row5 row6 row7 row8 row9 row10'. split(),
-    columns='column1 column2 column3 column4 column5'.split())
-print(x.index)
-y = x = pd.DataFrame(np.random.randn(
-    10, 5), index='row1 row2 row3 row4 row5 row6 row7 row8 row9 row10'. split(),
-    columns='column1 column2 column3 column4 column5'.split())
+# x = pd.DataFrame(np.random.randn(
+# 10, 5), index='row1 row2 row3 row4 row5 row6 row7 row8 row9 row10'. split(),
+# columns='column1 column2 column3 column4 column5'.split())
+# print(x.index)
+# y = x = pd.DataFrame(np.random.randn(
+# 10, 5), index='row1 row2 row3 row4 row5 row6 row7 row8 row9 row10'. split(),
+# columns='column1 column2 column3 column4 column5'.split())
 
-y['spin'] = ['sp1', 'sp2', 'sp3', 'sp4', 'sp5', 'sp6', 'sp7', 'sp8', 'sp9', 'sp10']
-print(y)
+#y['spin'] = ['sp1', 'sp2', 'sp3', 'sp4', 'sp5', 'sp6', 'sp7', 'sp8', 'sp9', 'sp10']
+# print(y)
 
-z = y.set_index('spin', inplace=True)
-print(z)
+#z = y.set_index('spin', inplace=True)
+# print(z)
 
 
 # -----------rename column name------------
-r = x.rename(columns={'column1': 'first',
-                      'column2': 'second',
-                      'column3': 'third',
-                      'column4': 'fourth',
-                      'column5': 'fifth',
-                      'column6': 'sixth'}, inplace=True)
+# r = x.rename(columns={'column1': 'first',
+# 'column2': 'second',
+# 'column3': 'third',
+# 'column4': 'fourth',
+# 'column5': 'fifth',
+# 'column6': 'sixth'}, inplace=True)
 
-print(r)
+# print(r)
+
+
+# -----------Tail(), Column and Index------------
+
+# data = pd.read_csv('annual-enterprise-survey.csv')
+# print(data.index)
+# print(data.columns)
+# print(data.tail())
+
+
+# Check For Missing Values or Null Values(isnull() Vs Isna())
+
+#data = pd.read_csv('annual-enterprise-survey.csv')
+# print(data.isnull())
+# print(data.isna())
+# print(data.isnull().sum())
+
+# to deal with null values
+data = {
+    "calories": [420, 380, 390],
+    "duration": [50, 40, 45]
+}
+# df = pd.DataFrame(data)
+
+# print(df)
+
+# # Locate Row
+# print(df.loc[0])
+# print(df.loc[[0, 1]])
+
+df = pd.DataFrame(data, index=["day1", "day2", "day3"])
+
+# print(df)
+# print(df.loc["day2"])
+# print(df.isnull())
+# print(df.mean())
