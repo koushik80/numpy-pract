@@ -182,20 +182,57 @@ import numpy as np
 
 # -----------------Concatenate Function-------------------
 
-mm = {'one': [2, 3, 1, 4, 5],
-      'two': [5, 4, 3, 2, 1],
-      'letter': ['a', 'a', 'b', 'b', 'c']}
+# mm = {'one': [2, 3, 1, 4, 5],
+#       'two': [5, 4, 3, 2, 1],
+#       'letter': ['a', 'a', 'b', 'b', 'c']}
 
-m1 = pd.DataFrame(mm)
-print(m1)
+# m1 = pd.DataFrame(mm)
+# print(m1)
 
-data = {
-    "calories": [420, 380, 390],
-    "duration": [50, 40, 45]
+# data = {
+#     "calories": [420, 380, 390],
+#     "duration": [50, 40, 45]
+# }
+# df = pd.DataFrame(data, index=["day1", "day2", "day3"])
+
+# new_df = pd.concat([df, m1])
+# new_df2 = pd.concat([df, m1], axis=1)
+# print(new_df)
+# print(new_df2)
+
+
+# -----------------Join and Merge-------------------
+
+# DataFrame of number of sales made by an employees
+
+sales = {
+    'Jones': 10000,
+    'Chris': 50000,
+    'Lari': 440,
+    'Rosa': 6700,
+    'Luna': 300
 }
-df = pd.DataFrame(data, index=["day1", "day2", "day3"])
 
-new_df = pd.concat([df, m1])
-new_df2 = pd.concat([df, m1], axis=1)
-print(new_df)
-print(new_df2)
+# DataFrames of all employees and the region they work in
+
+region = {
+    'Jones': 'West',
+    'Chris': np.nan,
+    'Lari': 'West',
+    'Rosa': 'East',
+    'Luna': 'South',
+    'Kevin': 'West',
+    'Peter': 'East',
+    'James': np.nan,
+    'Karl': 'North'
+}
+
+# covert dictionary to dataframes
+
+sales_df = pd.DataFrame.from_dict(sales, orient='index',
+                                  columns=['sales'])
+region_df = pd.DataFrame.from_dict(region, orient='index',
+                                   columns=['region'])
+
+print(sales_df)
+print(region_df)
