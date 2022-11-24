@@ -291,3 +291,46 @@ import numpy as np
 # print(pd.merge(region_df, sales_df, on='names', how='right'))
 # print(pd.merge(region_df, sales_df, on='names', how='inner'))
 # print(pd.merge(region_df, sales_df, on='names', how='outer'))
+
+
+# ---------------------Cleaning Data--------------------
+
+# -----------------Cleaning empty cells-------------------
+
+# df = pd.read_csv('Automobile.csv')
+# new_df = df.dropna()
+# print(new_df.to_string())
+
+# Note: By default, the dropna() method returns a new DataFrame, and will not change the original.
+
+# If want to change the original DataFrame, use the inplace = True argument:
+
+# df = pd.read_csv('Automobile.csv')
+# df.dropna(inplace=True)
+# print(df.to_string())
+
+
+#      --------replace empty values--------
+# Another way of dealing with empty cells is to insert a new value instead.
+
+# This way you do not have to delete entire rows just because of some empty cells.
+
+# The fillna() method allows us to replace empty cells with a value:
+
+# df = pd.read_csv('data.csv')
+
+# df.fillna(130, inplace=True)
+
+
+# -----------Replace Only For Specified Columns--------------
+
+
+# df = pd.read_csv('data.csv')
+
+# df["Calories"].fillna(145)
+
+# print(df)
+
+# ----duplicate-----
+
+# print(df.duplicated())
