@@ -240,30 +240,30 @@ import numpy as np
 
 # -----------------Join-------------------
 
-sales = {
-    'Jones': 10000,
-    'Chris': 50000,
-    'Lari': 440,
-    'Rosa': 6700,
-    'Luna': 300
-}
+# sales = {
+#     'Jones': 10000,
+#     'Chris': 50000,
+#     'Lari': 440,
+#     'Rosa': 6700,
+#     'Luna': 300
+# }
 
-region = {
-    'Jones': 'West',
-    'Chris': np.nan,
-    'Lari': 'West',
-    'Rosa': 'East',
-    'Jackson': 'South',
-    'Kevin': 'West',
-    'Peter': 'East',
-    'James': np.nan,
-    'Karl': 'North'
-}
+# region = {
+#     'Jones': 'West',
+#     'Chris': np.nan,
+#     'Lari': 'West',
+#     'Rosa': 'East',
+#     'Jackson': 'South',
+#     'Kevin': 'West',
+#     'Peter': 'East',
+#     'James': np.nan,
+#     'Karl': 'North'
+# }
 
-sales_df = pd.DataFrame.from_dict(sales, orient='index',
-                                  columns=['sales'])
-region_df = pd.DataFrame.from_dict(region, orient='index',
-                                   columns=['region'])
+# sales_df = pd.DataFrame.from_dict(sales, orient='index',
+#                                   columns=['sales'])
+# region_df = pd.DataFrame.from_dict(region, orient='index',
+#                                    columns=['region'])
 # --------here goes below the join formulas----------
 #joined_df = region_df.join(sales_df, how='left')
 # print(joined_df)
@@ -276,3 +276,18 @@ region_df = pd.DataFrame.from_dict(region, orient='index',
 
 # joined_df = region_df.join(sales_df, how='outer')
 # print(joined_df)
+
+
+# -----------------Merge-------------------
+
+# give title to the index column
+# sales_df.index.name = 'names'
+# region_df.index.name = 'names'
+
+# print(sales_df)
+# print(region_df)
+# print(pd.merge(region_df, sales_df, on='names'))
+# print(pd.merge(region_df, sales_df, on='names', how='left'))
+# print(pd.merge(region_df, sales_df, on='names', how='right'))
+# print(pd.merge(region_df, sales_df, on='names', how='inner'))
+# print(pd.merge(region_df, sales_df, on='names', how='outer'))
