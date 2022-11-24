@@ -145,18 +145,18 @@ import numpy as np
 # print(data.tail())
 
 
-# Check For Missing Values or Null Values(isnull() Vs Isna())
+# -----------Check For Missing Values or Null Values(isnull() Vs Isna())---------
 
 #data = pd.read_csv('annual-enterprise-survey.csv')
 # print(data.isnull())
 # print(data.isna())
 # print(data.isnull().sum())
 
-# to deal with null values
-data = {
-    "calories": [420, 380, 390],
-    "duration": [50, 40, 45]
-}
+# --------------to deal with null values----------------
+# data = {
+#     "calories": [420, 380, 390],
+#     "duration": [50, 40, 45]
+# }
 # df = pd.DataFrame(data)
 
 # print(df)
@@ -165,9 +165,37 @@ data = {
 # print(df.loc[0])
 # print(df.loc[[0, 1]])
 
-df = pd.DataFrame(data, index=["day1", "day2", "day3"])
+#df = pd.DataFrame(data, index=["day1", "day2", "day3"])
 
 # print(df)
 # print(df.loc["day2"])
 # print(df.isnull())
 # print(df.mean())
+
+# Sort values
+#print(df.sort_values(by='calories', ascending=True))
+#print(df.sort_values(by='calories', ascending=False).head())
+
+
+# ----Count() & Value_Count(), groupby(), conditional selection in the lecture and exercises
+
+
+# -----------------Concatenate Function-------------------
+
+mm = {'one': [2, 3, 1, 4, 5],
+      'two': [5, 4, 3, 2, 1],
+      'letter': ['a', 'a', 'b', 'b', 'c']}
+
+m1 = pd.DataFrame(mm)
+print(m1)
+
+data = {
+    "calories": [420, 380, 390],
+    "duration": [50, 40, 45]
+}
+df = pd.DataFrame(data, index=["day1", "day2", "day3"])
+
+new_df = pd.concat([df, m1])
+new_df2 = pd.concat([df, m1], axis=1)
+print(new_df)
+print(new_df2)
