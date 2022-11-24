@@ -205,6 +205,41 @@ import numpy as np
 
 # DataFrame of number of sales made by an employees
 
+# sales = {
+#     'Jones': 10000,
+#     'Chris': 50000,
+#     'Lari': 440,
+#     'Rosa': 6700,
+#     'Luna': 300
+# }
+
+# DataFrames of all employees and the region they work in
+
+# region = {
+#     'Jones': 'West',
+#     'Chris': np.nan,
+#     'Lari': 'West',
+#     'Rosa': 'East',
+#     'Luna': 'South',
+#     'Kevin': 'West',
+#     'Peter': 'East',
+#     'James': np.nan,
+#     'Karl': 'North'
+# }
+
+# covert dictionary to dataframes
+
+# sales_df = pd.DataFrame.from_dict(sales, orient='index',
+#                                   columns=['sales'])
+# region_df = pd.DataFrame.from_dict(region, orient='index',
+#                                    columns=['region'])
+
+# print(sales_df)
+# print(region_df)
+
+
+# -----------------Join-------------------
+
 sales = {
     'Jones': 10000,
     'Chris': 50000,
@@ -213,26 +248,31 @@ sales = {
     'Luna': 300
 }
 
-# DataFrames of all employees and the region they work in
-
 region = {
     'Jones': 'West',
     'Chris': np.nan,
     'Lari': 'West',
     'Rosa': 'East',
-    'Luna': 'South',
+    'Jackson': 'South',
     'Kevin': 'West',
     'Peter': 'East',
     'James': np.nan,
     'Karl': 'North'
 }
 
-# covert dictionary to dataframes
-
 sales_df = pd.DataFrame.from_dict(sales, orient='index',
                                   columns=['sales'])
 region_df = pd.DataFrame.from_dict(region, orient='index',
                                    columns=['region'])
+# --------here goes below the join formulas----------
+#joined_df = region_df.join(sales_df, how='left')
+# print(joined_df)
 
-print(sales_df)
-print(region_df)
+# joined_df = region_df.join(sales_df, how='right')
+# print(joined_df)
+
+# joined_df = region_df.join(sales_df, how='inner')
+# print(joined_df)
+
+# joined_df = region_df.join(sales_df, how='outer')
+# print(joined_df)
